@@ -733,3 +733,87 @@ body.pagina-curriculo.tema-escuro .cv-content .cv-section h2 {
     }
 
 }
+
+
+
+/* ==========================================
+   FORMULÁRIO - VALIDAÇÃO E FEEDBACK
+========================================== */
+
+.pagina-formulario .form-descricao {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--text-dim, #64748b);
+}
+
+.pagina-formulario .mensagem-erro {
+    display: block;
+    color: #dc2626;
+    font-size: 0.82rem;
+    margin-top: 5px;
+}
+
+.pagina-formulario input[aria-invalid="true"] {
+    border: 2px solid #dc2626;
+}
+
+.pagina-formulario .mensagem-formulario {
+    margin: 16px 0;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.pagina-formulario .mensagem-formulario.sucesso {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.pagina-formulario .mensagem-formulario.erro {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+/* Alinhamento da navbar */
+
+.pagina-formulario .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.pagina-formulario .navbar-acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.pagina-formulario .navbar-acoes .nav-links {
+    display: flex;
+    align-items: center;
+    width: auto;
+    gap: 0;
+}
+
+.pagina-formulario .navbar-acoes .btn-tema {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .pagina-formulario .navbar-inner {
+        flex-wrap: wrap;
+    }
+
+    .pagina-formulario .navbar-acoes {
+        margin-left: 0;
+        flex-wrap: wrap;
+    }
+}
