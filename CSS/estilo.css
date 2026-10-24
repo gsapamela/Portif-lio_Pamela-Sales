@@ -207,10 +207,6 @@ a { text-decoration: none; }
    CONFIGURAÇÕES GERAIS CURRICULO
 ================================ */
 
-* {
-    box-sizing: border-box;
-}
-
 body.pagina-curriculo {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -572,6 +568,155 @@ iframe {
     margin: 20px auto;
     max-width: 100%;
     height: auto;
+}
+
+/* ==========================================================
+   TEMA CLARO / ESCURO — PORTFÓLIO
+   Compatível com JS/script.js e localStorage("tema")
+   As variáveis são alteradas apenas quando o body tem
+   a classe tema-escuro.
+   ========================================================== */
+
+body {
+    transition: background-color .25s ease, color .25s ease;
+}
+
+/* Botão na barra de navegação */
+.btn-tema {
+    flex-shrink: 0;
+    padding: .6rem .85rem;
+    border: 1px solid #AFC6EA;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #24344D;
+    font-family: var(--sans);
+    font-size: .85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.btn-tema:hover { background: #E9F1FF; }
+
+.btn-tema:focus-visible,
+.nav-links a:focus-visible,
+.brand:focus-visible,
+.btn-contact:focus-visible {
+    outline: 3px solid #F6C453;
+    outline-offset: 3px;
+}
+
+/* Variáveis do tema escuro: reutilizadas por toda a página */
+body.tema-escuro {
+    --navy: #141F31;
+    --navy-light: #273951;
+    --bg: #171D28;
+    --card-bg: #263244;
+    --card-border: #41516A;
+    --text: #F2F5FA;
+    --text-dim: #CBD5E1;
+    --accent: #70B1FF;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.tema-escuro .navbar,
+body.tema-escuro .site-footer {
+    background: var(--navy);
+}
+
+/* A marca continua clara para contrastar com o cabeçalho */
+body.tema-escuro .brand {
+    background: #FFFFFF;
+    color: #141F31;
+}
+
+body.tema-escuro .nav-links a { color: #E0E8F5; }
+body.tema-escuro .nav-links a:hover { color: #FFFFFF; }
+
+body.tema-escuro .hero,
+body.tema-escuro .projects,
+body.tema-escuro .form-page {
+    background: var(--bg);
+}
+
+body.tema-escuro .hero h1,
+body.tema-escuro .projects h2,
+body.tema-escuro .form-card h1 {
+    color: var(--text);
+}
+
+body.tema-escuro .hero p,
+body.tema-escuro .card-body p,
+body.tema-escuro .form-hint {
+    color: var(--text-dim);
+}
+
+body.tema-escuro .card,
+body.tema-escuro .form-card {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+
+body.tema-escuro .card-body h3,
+body.tema-escuro .form-group label { color: var(--text); }
+
+body.tema-escuro .form-group input {
+    background: #1B2637;
+    color: var(--text);
+    border-color: var(--card-border);
+}
+
+body.tema-escuro .form-group input::placeholder { color: #B8C5D8; }
+
+body.tema-escuro .btn-contact,
+body.tema-escuro .form-card button {
+    background: #367DCE;
+    color: #FFFFFF;
+}
+
+body.tema-escuro .btn-contact:hover,
+body.tema-escuro .form-card button:hover { background: #2867AE; }
+
+body.tema-escuro .footer-note { color: #C6D2E2; }
+
+body.tema-escuro .btn-tema {
+    background: #344866;
+    border-color: #6687B5;
+    color: #FFFFFF;
+}
+body.tema-escuro .btn-tema:hover { background: #426087; }
+
+/* Página de currículo: estilos existentes preservados;
+   complementos para o tema escuro, se ela usar o mesmo JS. */
+body.pagina-curriculo.tema-escuro {
+    background: var(--bg);
+    color: var(--text);
+}
+body.pagina-curriculo.tema-escuro .cv-content { background: var(--bg); }
+body.pagina-curriculo.tema-escuro .cv-content p,
+body.pagina-curriculo.tema-escuro .cv-content li,
+body.pagina-curriculo.tema-escuro .cv-content .cv-section h2 {
+    color: var(--text);
+}
+body.pagina-curriculo.tema-escuro .cv-content .cv-section h2 {
+    border-bottom-color: var(--card-border);
+}
+
+/* Celulares: navegação e botão não ultrapassam a largura */
+@media (max-width: 640px) {
+    .navbar-inner { gap: .75rem; }
+    .nav-links { justify-content: center; width: 100%; gap: .45rem .85rem; }
+    .nav-links a { font-size: .85rem; }
+    .btn-tema { margin: 0 auto; }
+    .card-grid { grid-template-columns: minmax(0, 1fr); }
+    .hero, .projects { padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body, .btn-tema { transition: none; }
 }
 
 
