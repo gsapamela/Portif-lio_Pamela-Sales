@@ -719,4 +719,38 @@ body.pagina-curriculo.tema-escuro .cv-content .cv-section h2 {
     body, .btn-tema { transition: none; }
 }
 
+/* ===== CORREÇÃO DO MODO ESCURO ===== */
 
+body.tema-escuro {
+    --navy: #141F31;
+    --bg: #171D28;
+    --card-bg: #263244;
+    --card-border: #41516A;
+    --text: #F2F5FA;
+    --text-dim: #CBD5E1;
+    --accent: #70B1FF;
+
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+body.tema-escuro .hero,
+body.tema-escuro .projects {
+    background-color: var(--bg);
+}
+
+body.tema-escuro .hero h1,
+body.tema-escuro .projects h2,
+body.tema-escuro .card h3 {
+    color: var(--text);
+}
+
+body.tema-escuro .hero p,
+body.tema-escuro .card p {
+    color: var(--text-dim);
+}
+
+body.tema-escuro .card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
