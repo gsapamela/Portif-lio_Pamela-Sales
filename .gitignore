@@ -1,0 +1,20 @@
+# Arquivos temporários
+*.tmp
+*.log
+*.bak
+
+# Arquivos do Windows
+Thumbs.db
+Desktop.ini
+
+# Arquivos do macOS
+.DS_Store
+
+# Dependências
+node_modules/
+
+# Configurações locais
+.env
+
+# Arquivos temporários do VS Code
+*.code-workspace
