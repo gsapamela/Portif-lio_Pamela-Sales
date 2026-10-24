@@ -1,90 +1,135 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculo</title>
+
+    <title>Currículo | Pâmela Sales</title>
+
     <link rel="stylesheet" href="CSS/estilo.css">
+
+    <!-- JavaScript: tema claro/escuro -->
+    <script src="js/script.js" defer></script>
 </head>
 
+<body id="topo" class="pagina-curriculo">
 
-<body class="pagina-curriculo">
-
-    <!-- ===== NAVBAR ===== -->
+    <!-- ===== BARRA DE NAVEGAÇÃO ===== -->
     <header class="navbar">
         <div class="navbar-inner">
-            <a href="#topo" class="brand">Portifólio | Pâmela Sales</a>
-            <nav class="nav-links">
-                <a href="index.html">Início</a>
-            </nav>
+
+            <!-- Identidade do portfólio -->
+            <a href="index.html" class="brand">
+                Portfólio | Pâmela Sales
+            </a>
+
+            <!-- Navegação e botão agrupados -->
+            <div class="navbar-acoes">
+
+                <nav class="nav-links" aria-label="Navegação do currículo">
+                    <a href="index.html">Início</a>
+                </nav>
+
+                <button
+                    id="alternarTema"
+                    class="btn-tema"
+                    type="button"
+                    aria-label="Ativar tema escuro"
+                    aria-pressed="false">
+                    🌙 Tema escuro
+                </button>
+
+            </div>
         </div>
     </header>
 
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
     <div class="curriculo-layout">
 
-        <!-- COLUNA ESQUERDA -->
+        <!-- ===== COLUNA ESQUERDA ===== -->
         <aside class="cv-sidebar">
 
+            <!-- Foto de perfil -->
             <div class="cv-avatar">
-                <img src="imagens/perfil.jpg" alt="Pâmela das Graças de Sales Andrade">
+                <img
+                    src="imagens/perfil.jpg"
+                    alt="Foto de Pâmela das Graças de Sales Andrade">
             </div>
 
+            <!-- Identificação profissional -->
             <header class="curriculo-header">
-                <h1 class="cv-name">Pâmela das Graças de Sales Andrade</h1>
+
+                <h1 class="cv-name">
+                    Pâmela das Graças de Sales Andrade
+                </h1>
 
                 <p class="cv-role">
-                    Profissional em transição para Tecnologia | Dados | BI e Desenvolvimento
+                    Profissional em transição para Tecnologia |
+                    Dados | BI e Desenvolvimento
                 </p>
+
             </header>
 
+            <!-- Informações de contato -->
             <section class="cv-section">
-                <h2>Informações de contato</h2>
+
+                <h2>Informações de Contato</h2>
 
                 <div class="cv-contact">
+
                     <p>Mogi das Cruzes - SP</p>
 
-                    <p>
-                        (11) 96080-6489
-                    </p>
-                    <p>
-                        gsapam@hotmail.com
-                    </p>
+                    <p>(11) 96080-6489</p>
+
+                    <p>gsapam@hotmail.com</p>
 
                     <p>
-                        <a href="https://github.com/gsapamela" target="_blank">Github</a> |
-                        <a href="https://www.linkedin.com/in/pâmela-sales-andrade" target="_blank">
-                            Linkedin
+                        <a
+                            href="https://github.com/gsapamela"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            GitHub
+                        </a>
+                        |
+                        <a
+                            href="https://www.linkedin.com/in/pâmela-sales-andrade"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            LinkedIn
                         </a>
                     </p>
+
                 </div>
             </section>
 
-
-
+            <!-- Formação acadêmica -->
             <section class="cv-section">
 
                 <h2 class="destaque">Formação Acadêmica</h2>
 
                 <p>
-                    Tecnólogo em Logística | Centro Universitário FAM – 2025
+                    Tecnólogo em Logística |
+                    Centro Universitário FAM – 2025
                 </p>
-                <p>
 
+                <p>
                     Cursando Análise e Desenvolvimento de Sistemas |
                     Centro Universitário Braz Cubas – 2026
-
                 </p>
-
 
             </section>
 
+            <!-- Cursos complementares -->
             <section class="cv-section">
 
                 <h2 class="destaque">Cursos Complementares</h2>
 
-                <p>Fundamentos de Linguagem Python aplicado à IA —
-                    Data Science Academy | 2026</p>
+                <p>
+                    Fundamentos de Linguagem Python aplicado à IA —
+                    Data Science Academy | 2026
+                </p>
 
                 <p>Power BI — SENAI | 2024</p>
 
@@ -92,39 +137,44 @@
 
                 <p>Gestão Empresarial — Internexus | 2017</p>
 
-
-
             </section>
 
         </aside>
 
-
-        <!-- COLUNA DIREITA -->
+        <!-- ===== COLUNA DIREITA ===== -->
         <main class="cv-content">
 
+            <!-- Resumo profissional -->
             <section class="cv-section">
 
                 <h2 class="destaque">Resumo Profissional</h2>
 
                 <p>
-                    Profissional com formação em Logística e experiência nas áreas comercial e administrativa, atuando
-                    com análise de indicadores, relatórios gerenciais, faturamento, acompanhamento de resultados e
-                    processos.
+                    Profissional com formação em Logística e
+                    experiência nas áreas comercial e administrativa,
+                    atuando com análise de indicadores, relatórios
+                    gerenciais, faturamento, acompanhamento de
+                    resultados e processos.
                 </p>
 
                 <p>
-                    Possuo experiência com Excel Avançado, Power BI e sistemas ERP, além de conhecimentos em Python,
+                    Possuo experiência com Excel Avançado, Power BI
+                    e sistemas ERP, além de conhecimentos em Python,
                     HTML e C++.
                 </p>
 
                 <p>
-                    Atualmente curso Análise e Desenvolvimento de Sistemas e direciono minha carreira para Tecnologia,
-                    explorando oportunidades em Dados, Business Intelligence e Desenvolvimento de Software.
+                    Atualmente curso Análise e Desenvolvimento de
+                    Sistemas e direciono minha carreira para
+                    Tecnologia, explorando oportunidades em Dados,
+                    Business Intelligence e Desenvolvimento de Software.
                 </p>
 
             </section>
 
+            <!-- Competências técnicas -->
             <section class="cv-section">
+
                 <h2 class="destaque">Competências Técnicas</h2>
 
                 <p>
@@ -145,93 +195,129 @@
                     Faturamento | Acompanhamento de Resultados |
                     Rotinas Financeiras
                 </p>
+
             </section>
 
+            <!-- Experiência profissional -->
             <section class="cv-section">
 
                 <h2 class="destaque">Experiência Profissional</h2>
 
-                <p><strong>Grupo Simpar</strong></p>
-                <p><strong>Analista Comercial Pleno - 09/2024 até o momento</strong></p>
+                <!-- Analista Comercial Pleno -->
+                <p>
+                    <strong>Grupo Simpar</strong>
+                </p>
+
+                <p>
+                    <strong>
+                        Analista Comercial Pleno -
+                        09/2024 até o momento
+                    </strong>
+                </p>
+
                 <ul>
-                    <li>Análise e acompanhamento de indicadores comerciais e operacionais.</li>
-
                     <li>
-                        Elaboração e análise de relatórios gerenciais para acompanhamento
-                        de resultados e suporte à tomada de decisão.
+                        Análise e acompanhamento de indicadores
+                        comerciais e operacionais.
                     </li>
 
                     <li>
-                        Monitoramento de processos de faturamento e indicadores de performance.
+                        Elaboração e análise de relatórios gerenciais
+                        para acompanhamento de resultados e suporte
+                        à tomada de decisão.
                     </li>
 
                     <li>
-                        Consolidação e acompanhamento periódico de informações para análise
-                        de resultados.
+                        Monitoramento de processos de faturamento
+                        e indicadores de performance.
                     </li>
 
                     <li>
-                        Apoio à tomada de decisão a partir da análise de informações
-                        operacionais e financeiras.
+                        Consolidação e acompanhamento periódico de
+                        informações para análise de resultados.
                     </li>
 
                     <li>
-                        Controle de pagamentos, baixas financeiras e conciliação de informações.
+                        Apoio à tomada de decisão a partir da análise
+                        de informações operacionais e financeiras.
                     </li>
 
                     <li>
-                        Utilização de sistemas ERP para registro, controle e acompanhamento
-                        de processos.
+                        Controle de pagamentos, baixas financeiras
+                        e conciliação de informações.
+                    </li>
+
+                    <li>
+                        Utilização de sistemas ERP para registro,
+                        controle e acompanhamento de processos.
                     </li>
                 </ul>
 
-                <p><strong>Analista Comercial Júnior - 01/2024 a 09/2024</strong></p>
+                <!-- Analista Comercial Júnior -->
+                <p>
+                    <strong>
+                        Analista Comercial Júnior -
+                        01/2024 a 09/2024
+                    </strong>
+                </p>
+
                 <ul>
                     <li>
-                        Gestão e acompanhamento de processos de faturamento e emissão de notas fiscais.
+                        Gestão e acompanhamento de processos de
+                        faturamento e emissão de notas fiscais.
                     </li>
 
                     <li>
-                        Elaboração e controle de relatórios e informações comerciais.
+                        Elaboração e controle de relatórios
+                        e informações comerciais.
                     </li>
 
                     <li>
-                        Apoio na análise de resultados e atualização de indicadores.
+                        Apoio na análise de resultados e
+                        atualização de indicadores.
                     </li>
 
                     <li>
-                        Utilização de ERP para registro e acompanhamento de processos.
+                        Utilização de ERP para registro e
+                        acompanhamento de processos.
                     </li>
                 </ul>
 
-                <p><strong>Assistente Comercial - 03/2023 a 06/2023</strong></p>
+                <!-- Assistente Comercial -->
+                <p>
+                    <strong>
+                        Assistente Comercial -
+                        03/2023 a 06/2023
+                    </strong>
+                </p>
+
                 <ul>
                     <li>
-                        Elaboração e controle de relatórios comerciais para acompanhamento de resultados.
+                        Elaboração e controle de relatórios
+                        comerciais para acompanhamento de resultados.
                     </li>
 
                     <li>
-                        Suporte aos processos de faturamento e conferência de informações.
+                        Suporte aos processos de faturamento
+                        e conferência de informações.
                     </li>
 
                     <li>
-                        Atendimento às equipes internas e apoio na resolução de demandas operacionais.
+                        Atendimento às equipes internas e apoio
+                        na resolução de demandas operacionais.
                     </li>
 
                     <li>
-                        Controle de documentos e apoio à organização e padronização de processos.
+                        Controle de documentos e apoio à organização
+                        e padronização de processos.
                     </li>
                 </ul>
 
             </section>
-
-
-
 
         </main>
 
     </div>
 
 </body>
-
 </html>
