@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pâmela Sales | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/estilo.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="#topo" class="brand">Portifólio | Pâmela Sales</a>
+            <nav class="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Portfólio</a>
+                <a href="Curriculo.html">Curriculo</a>
+                <a href="formulario.html">Formulário</a>
+                <a href="multimidia.html">Multimidia</a>
+                <a href="graficos.html">Graficos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO / SOBRE ===== -->
+    <section id="sobre" class="hero">
+        <div class="hero-inner">
+            <h1>Sobre mim</h1>
+            <p>
+                Sou profissional da área comercial, formada em Logística e atualmente cursando Análise e Desenvolvimento
+                de Sistemas. Ao longo da carreira, atuei com processos administrativos, faturamento e análise de
+                indicadores — experiência que despertou meu interesse por tecnologia e dados.
+
+                Hoje estou em transição para a área de Tecnologia, unindo essa vivência profissional a conhecimentos em
+                HTML, CSS, JavaScript, Python, SQL, Git, GitHub e Power BI. Gosto de aprender na prática e transformar
+                problemas do dia a dia em soluções mais simples e eficientes.
+
+                Este portfólio reúne parte dos meus estudos e projetos nessa jornada.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== PORTFÓLIO ===== -->
+    <section id="projetos" class="projects">
+        <div class="projects-inner">
+            <h2>Projetos</h2>
+            <div class="card-grid">
+
+                <article class="card">
+                    <img src="imagens/armazemx.jpg" alt="Projeto ArmazemX" class="card-thumb">
+                    <div class="card-body">
+                        <h3>ArmazemX</h3>
+                        <p>Controle de estoque para um armazém.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="imagens/portfolio.jpg" alt="Projeto Portfólio" class="card-thumb">
+                    <div class="card-body">
+                        <h3>Portfólio</h3>
+                        <p>Site pessoal para exibir meu trabalho, currículo e habilidades.</p>
+                    </div>
+                </article>
+
+            </div>
+    </section>
+
+    <!-- ===== RODAPÉ / CONTATO ===== -->
+    <footer id="contato" class="site-footer">
+        <a class="btn-contact" href="mailto:gsa.pamela@gmail.com">Entre em contato</a>
+        <p class="footer-note">Site Pessoal / Portfólio · Desenvolvimento Front-end para Web · <span id="year"></span>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

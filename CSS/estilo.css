@@ -1,0 +1,577 @@
+/* ---------- tokens INDEX ---------- */
+:root {
+  --navy: #24344D;
+  --navy-light: #34495E;
+  --bg: #F4F6F8;
+  --card-bg: #FFFFFF;
+  --card-border: #E4E7EB;
+  --text: #1F2937;
+  --text-dim: #6B7280;
+  --accent: #2F80ED;
+  --sans: 'Inter', sans-serif;
+  --heading: 'Poppins', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; }
+
+/* ---------- navbar ---------- */
+.navbar {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 0.8rem;
+}
+
+.brand {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: #fff;
+  color: var(--navy);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+}
+
+.nav-links a {
+  color: #C7D0DC;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.4rem 0.1rem;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover { color: #fff; border-bottom-color: var(--accent); }
+
+@media (min-width: 641px) {
+  .nav-links {
+    gap: 0.5rem 1.3rem;
+  }
+}
+
+
+/* ---------- hero ---------- */
+.hero {
+  background: var(--bg);
+  padding: 4rem 1.5rem 3rem;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  color: var(--navy);
+  margin: 0 0 1rem;
+  display: inline-block;
+}
+
+.hero p {
+  color: var(--text-dim);
+  max-width: 68ch;
+  margin: 0 auto 1rem;
+  font-size: 1.02rem;
+  text-align: center;
+}
+.hero p:last-child { margin-bottom: 0; }
+
+/* ---------- projects ---------- */
+.projects {
+  padding: 1rem 1.5rem 4rem;
+}
+
+.projects-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.projects h2 {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin: 0 0 1.4rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+@media (min-width: 641px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.card-thumb {
+  height: 140px;
+  width: 100%;
+  object-fit: cover;   /* corta a imagem mantendo a proporção */
+  display: block;
+  background: #DCE3E9; /* aparece enquanto a imagem carrega, ou se o caminho estiver errado */
+}
+
+.card-body { padding: 1.1rem 1.3rem 1.3rem; }
+
+.card-body h3 {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0 0 0.4rem;
+}
+
+.card-body p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+  background: var(--navy);
+  text-align: center;
+  padding: 2.6rem 1.5rem;
+}
+
+.btn-contact {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+}
+.btn-contact:hover { background: #1f6fd6; }
+
+.footer-note {
+  color: #93A0B3;
+  font-size: 0.8rem;
+  margin: 1.2rem 0 0;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 640px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 1.1rem; }
+}
+
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS CURRICULO
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body.pagina-curriculo {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F4F6F8;
+    color: #1F2937;
+}
+
+
+
+
+/* ==============================
+   LAYOUT PRINCIPAL
+================================ */
+
+.curriculo-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   COLUNA ESQUERDA
+================================ */
+
+.cv-sidebar {
+    flex: none;
+    width: 100%;
+    background: #1E1E24;
+    color: #F4F6F8;
+    padding: 2rem 1.5rem;
+}
+
+.cv-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.2rem;
+    background: #2C2C34;
+}
+
+.cv-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cv-name {
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin: 0 0 0.5rem;
+}
+
+.cv-role {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 2rem;
+}
+
+
+/* ==============================
+   SEÇÕES
+================================ */
+
+.cv-section {
+    margin-bottom: 2rem;
+}
+
+.cv-section h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #9CA3AF;
+    border-bottom: 1px solid #33333B;
+    padding-bottom: 0.5rem;
+    margin: 0 0 0.7rem;
+}
+
+
+/* ==============================
+   CONTATO
+================================ */
+
+.cv-contact p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 0.7rem;
+    word-break: break-word;
+}
+
+.cv-contact a {
+    color: #F4F6F8;
+    text-decoration: none;
+}
+
+/* ==============================
+   COLUNA DIREITA
+================================ */
+
+@media (min-width: 761px) {
+  .curriculo-layout {
+    flex-direction: row;
+  }
+ 
+  .cv-sidebar {
+    flex: 0 0 300px;
+    width: auto;
+    padding: 2.5rem 1.6rem;
+  }
+ 
+  .cv-content {
+    width: auto;
+    padding: 3rem clamp(2rem, 4vw, 4rem);
+  }
+}
+
+/* Títulos da coluna direita */
+
+.cv-content .cv-section h2 {
+    color: #374151;
+    border-bottom: 2px solid #D1D5DB;
+}
+
+
+/* Textos */
+
+.cv-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #4B5563;
+    margin: 0 0 1rem;
+}
+
+
+/* ==============================
+   LISTAS
+================================ */
+
+.cv-content ul {
+    padding-left: 1.2rem;
+    margin-top: 0;
+}
+
+.cv-content li {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+    color: #4B5563;
+}
+
+
+/* ==============================
+   DESTAQUE
+================================ */
+
+.destaque {
+    font-weight: 700;
+}
+
+.cv-sidebar .cv-section h2 {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9CA3AF;
+    border-bottom: 1px solid #33333B;
+    padding-bottom: 0.5rem;
+    margin: 0 0 0.9rem;
+}
+/* ==============================
+   TÍTULOS DA COLUNA ESQUERDA
+================================ */
+
+.cv-sidebar .cv-section h2 {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9CA3AF;
+    border-bottom: 1px solid #33333B;
+    padding-bottom: 0.5rem;
+    margin: 0 0 0.9rem;
+}
+
+
+/* ==============================
+   TEXTOS DA COLUNA ESQUERDA
+================================ */
+
+.cv-sidebar .cv-section p,
+.cv-sidebar .cv-section li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #F8F9FA;
+    margin-bottom: 0.7rem;
+}
+
+/* ==============================
+   LISTAS
+================================ */
+
+.cv-sidebar .cv-section ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+.cv-sidebar .cv-section li {
+    margin-bottom: 0.8rem;
+}
+
+
+/* ==============================
+   CONTATO
+================================ */
+
+.cv-sidebar .cv-contact p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0 0 0.7rem;
+}
+
+
+/* ==============================
+   LINKS
+================================ */
+
+.cv-sidebar a {
+    color: #F8F9FA;
+    text-decoration: none;
+}
+
+.cv-sidebar a:hover {
+    color: #2DD4BF;
+}
+
+/* ==============================
+   PÁGINA DE FORMULÁRIO
+================================ */
+ 
+.form-page {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    background: var(--bg);
+}
+ 
+
+.form-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 2.4rem 2.2rem;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+ 
+.form-card h1 {
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin: 0 0 1.8rem;
+    text-align: center;
+}
+ 
+.form-group {
+    margin-bottom: 1.3rem;
+    text-align: left;
+}
+ 
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+}
+ 
+.form-group input {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    background: #fff;
+    color: var(--text);
+}
+ 
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
+}
+ 
+.form-hint {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+}
+ 
+.form-card button {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.85rem;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 0.4rem;
+}
+.form-card button:hover { background: #1f6fd6; }
+
+
+/* ==============================
+   PÁGINA DA MULTIMÍDIA
+================================ */
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+video,
+audio,
+iframe {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+
