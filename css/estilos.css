@@ -530,7 +530,6 @@ h1 {
 }
 
 video,
-audio,
 iframe {
     display: block;
     margin: 20px auto;
@@ -538,6 +537,9 @@ iframe {
     height: auto;
 }
 
+/* Player de áudio (única regra de áudio do arquivo).
+   O fundo colorido garante que o player apareça: o padrão do Chrome
+   é cinza-claro e se confunde com o fundo da página. */
 audio {
     display: block;
     width: 100%;
@@ -546,8 +548,15 @@ audio {
     margin: 20px auto;
     background: #DCE3E9;
     border-radius: 30px;
+    visibility: visible;
+    opacity: 1;
 }
 
+/* Player no tema escuro */
+body.tema-escuro audio {
+    background: #263244;
+    color-scheme: dark;
+}
 /* ==========================================================
    TEMA CLARO / ESCURO — PORTFÓLIO
    Compatível com JS/script.js e localStorage("tema")
