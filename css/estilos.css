@@ -538,6 +538,16 @@ iframe {
     height: auto;
 }
 
+audio {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: 54px;
+    margin: 0 auto;
+    visibility: visible;
+    opacity: 1;
+}
+
 /* ==========================================================
    TEMA CLARO / ESCURO — PORTFÓLIO
    Compatível com JS/script.js e localStorage("tema")
