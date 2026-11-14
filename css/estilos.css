@@ -6,8 +6,8 @@
   --card-bg: #FFFFFF;
   --card-border: #E4E7EB;
   --text: #1F2937;
-  --text-dim: #6B7280;
-  --accent: #2F80ED;
+  --text-dim: #4B5563;   /* contraste ajustado (antes #6B7280) */
+  --accent: #1F6FD6;     /* contraste ajustado (antes #2F80ED) */
   --sans: 'Inter', sans-serif;
   --heading: 'Poppins', sans-serif;
 }
@@ -37,9 +37,12 @@ a { text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 10;
+  padding: 0; /* o Bootstrap também define .navbar com padding; zerado para manter seu layout */
+  display: block; /* o Bootstrap usa display:flex em .navbar; aqui volta a ser bloco */
 }
 
 .navbar-inner {
+  width: 100%;
   max-width: 1080px;
   margin: 0 auto;
   padding: 1.1rem 1.5rem;
@@ -131,11 +134,7 @@ a { text-decoration: none; }
   margin: 0 0 1.4rem;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.4rem;
-}
+/* O grid agora é feito pelo Bootstrap (row / col-12 / col-md-6) no HTML */
 
 .card {
   background: var(--card-bg);
@@ -185,7 +184,7 @@ a { text-decoration: none; }
   padding: 0.85rem 2rem;
   border-radius: 999px;
 }
-.btn-contact:hover { background: #1f6fd6; }
+.btn-contact:hover { background: #1A5FB8; }
 
 .footer-note {
   color: #93A0B3;
@@ -491,10 +490,10 @@ body.pagina-curriculo {
     color: var(--text);
 }
  
+/* O contorno de foco vem da regra global :focus-visible (no fim do arquivo) */
 .form-group input:focus {
-    outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
+    box-shadow: 0 0 0 3px rgba(31, 111, 214, 0.15);
 }
  
 .form-hint {
@@ -517,7 +516,7 @@ body.pagina-curriculo {
     cursor: pointer;
     margin-top: 0.4rem;
 }
-.form-card button:hover { background: #1f6fd6; }
+.form-card button:hover { background: #1A5FB8; }
 
 
 /* ==============================
@@ -658,14 +657,15 @@ body.tema-escuro .form-group input {
 
 body.tema-escuro .form-group input::placeholder { color: #B8C5D8; }
 
+/* Botões no tema escuro: azul mais escuro para o texto branco ter contraste */
 body.tema-escuro .btn-contact,
 body.tema-escuro .form-card button {
-    background: #367DCE;
+    background: #2867AE;
     color: #FFFFFF;
 }
 
 body.tema-escuro .btn-contact:hover,
-body.tema-escuro .form-card button:hover { background: #2867AE; }
+body.tema-escuro .form-card button:hover { background: #1F5A9C; }
 
 body.tema-escuro .footer-note { color: #C6D2E2; }
 
@@ -698,7 +698,6 @@ body.pagina-curriculo.tema-escuro .cv-content .cv-section h2 {
     .nav-links { justify-content: center; width: 100%; gap: .45rem .85rem; }
     .nav-links a { font-size: .85rem; }
     .btn-tema { margin: 0 auto; }
-    .card-grid { grid-template-columns: minmax(0, 1fr); }
     .hero, .projects { padding-left: 1rem; padding-right: 1rem; }
 }
 
@@ -835,4 +834,47 @@ body.pagina-curriculo.tema-escuro .cv-content .cv-section h2 {
         margin-left: 0;
         flex-wrap: wrap;
     }
+}
+
+
+/* ==========================================================
+   ACESSIBILIDADE — FOCO VISÍVEL (CP4)
+   Azul escuro em fundos claros; amarelo em fundos escuros
+========================================================== */
+
+:focus-visible {
+    outline: 3px solid #1F4FBF;
+    outline-offset: 3px;
+}
+
+.navbar :focus-visible,
+.site-footer :focus-visible,
+body.tema-escuro :focus-visible {
+    outline-color: #F6C453;
+}
+
+
+/* ==========================================================
+   AJUSTES DAS DEMAIS PÁGINAS (CP4)
+========================================================== */
+
+/* Vídeo do YouTube responsivo (Bootstrap .ratio) */
+.embed-responsivo {
+    max-width: 560px;
+    margin: 20px auto;
+}
+
+/* Dentro do .ratio o Bootstrap posiciona o elemento; zera a margem do seu iframe/video */
+.ratio > iframe,
+.ratio > video {
+    margin: 0;
+}
+
+/* Formulário no tema escuro: erro em vermelho claro para ter contraste */
+body.tema-escuro.pagina-formulario .mensagem-erro {
+    color: #FCA5A5;
+}
+
+body.tema-escuro.pagina-formulario input[aria-invalid="true"] {
+    border-color: #F87171;
 }

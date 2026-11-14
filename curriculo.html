@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,7 +7,17 @@
 
     <title>Currículo | Pâmela Sales</title>
 
+    <!-- Bootstrap CSS (antes do seu CSS) -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        defer></script>
 
     <!-- JavaScript: tema claro/escuro -->
     <script src="js/scripts.js" defer></script>
@@ -16,8 +25,11 @@
 
 <body id="topo" class="pagina-curriculo">
 
-    <!-- ===== BARRA DE NAVEGAÇÃO ===== -->
-    <header class="navbar">
+    <!-- Link de acessibilidade: aparece ao pressionar Tab -->
+    <a class="visually-hidden-focusable" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- ===== BARRA DE NAVEGAÇÃO (não aparece na impressão) ===== -->
+    <header class="navbar d-print-none">
         <div class="navbar-inner">
 
             <!-- Identidade do portfólio -->
@@ -36,9 +48,8 @@
                     id="alternarTema"
                     class="btn-tema"
                     type="button"
-                    aria-label="Ativar tema escuro"
                     aria-pressed="false">
-                    🌙 Tema escuro
+                    <span aria-hidden="true">🌙</span> Tema escuro
                 </button>
 
             </div>
@@ -66,8 +77,8 @@
                 </h1>
 
                 <p class="cv-role">
-                    Profissional em transição para Tecnologia |
-                    Dados | BI e Desenvolvimento
+                    Analista de Sistemas |
+                    Dados | Desenvolvimento
                 </p>
 
             </header>
@@ -81,23 +92,27 @@
 
                     <p>Mogi das Cruzes - SP</p>
 
-                    <p>(11) 96080-6489</p>
+                    <p>
+                        <a href="tel:+5511960806489">(11) 96080-6489</a>
+                    </p>
 
-                    <p>gsapam@hotmail.com</p>
+                    <p class="text-break">
+                        <a href="mailto:gsapam@hotmail.com">gsapam@hotmail.com</a>
+                    </p>
 
                     <p>
                         <a
                             href="https://github.com/gsapamela"
                             target="_blank"
                             rel="noopener noreferrer">
-                            GitHub
+                            GitHub<span class="visually-hidden"> (abre em nova aba)</span>
                         </a>
                         |
                         <a
                             href="https://www.linkedin.com/in/pâmela-sales-andrade"
                             target="_blank"
                             rel="noopener noreferrer">
-                            LinkedIn
+                            LinkedIn<span class="visually-hidden"> (abre em nova aba)</span>
                         </a>
                     </p>
 
@@ -142,7 +157,7 @@
         </aside>
 
         <!-- ===== COLUNA DIREITA ===== -->
-        <main class="cv-content">
+        <main id="conteudo" class="cv-content">
 
             <!-- Resumo profissional -->
             <section class="cv-section">
@@ -160,7 +175,7 @@
                 <p>
                     Possuo experiência com Excel Avançado, Power BI
                     e sistemas ERP, além de conhecimentos em Python,
-                    HTML e C++.
+                    HTML, C++ e SQL.
                 </p>
 
                 <p>
@@ -186,7 +201,7 @@
 
                 <p>
                     <strong>Tecnologia:</strong>
-                    Python | HTML | C++ | Sistemas ERP
+                    Python | HTML | C++ | SQL | Sistemas ERP
                 </p>
 
                 <p>
