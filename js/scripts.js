@@ -1,3 +1,6 @@
+/* ==========================================
+   TEMA CLARO / ESCURO + ANO DO RODAPÉ
+========================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -15,8 +18,26 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Recupera o tema salvo
-    const temaSalvo = localStorage.getItem("tema");
+    // Ícone do botão (o <span aria-hidden="true"> do HTML)
+    const iconeTema = botaoTema.querySelector("span");
+
+    // localStorage pode estar bloqueado (aba anônima, política do navegador):
+    // o try/catch evita que o erro quebre o resto do script.
+    function lerTemaSalvo() {
+        try {
+            return localStorage.getItem("tema");
+        } catch (erro) {
+            return null;
+        }
+    }
+
+    function salvarTema(tema) {
+        try {
+            localStorage.setItem("tema", tema);
+        } catch (erro) {
+            // sem persistência, mas o tema continua funcionando na página
+        }
+    }
 
     function atualizarTema(tema) {
 
@@ -24,15 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.toggle("tema-escuro", escuro);
 
-        botaoTema.textContent = escuro
-            ? "☀️ Tema claro"
-            : "🌙 Tema escuro";
+        // Só o ícone muda; o texto "Tema escuro" fica fixo e o estado
+        // (ligado/desligado) é anunciado pelo aria-pressed.
+        if (iconeTema) {
+            iconeTema.textContent = escuro ? "☀️" : "🌙";
+        }
 
         botaoTema.setAttribute("aria-pressed", String(escuro));
     }
 
     // Aplica a preferência salva
-    atualizarTema(temaSalvo);
+    atualizarTema(lerTemaSalvo());
 
     // Alterna entre os temas
     botaoTema.addEventListener("click", function () {
@@ -43,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         atualizarTema(novoTema);
 
-        localStorage.setItem("tema", novoTema);
+        salvarTema(novoTema);
 
     });
 
@@ -74,13 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "confirmar-senha"
     ];
 
+    // O aria-describedby de cada campo já está no HTML (erro + dica),
+    // então o JS só mostra o texto do erro e marca o campo como inválido.
     function mostrarErro(campo, texto) {
         const elemento = document.getElementById(campo);
         const erro = document.getElementById("erro-" + campo);
 
         erro.textContent = texto;
         elemento.setAttribute("aria-invalid", "true");
-        elemento.setAttribute("aria-describedby", erro.id);
     }
 
     function limparErros() {
@@ -90,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             erro.textContent = "";
             elemento.removeAttribute("aria-invalid");
-            elemento.removeAttribute("aria-describedby");
         });
 
         mensagem.textContent = "";
